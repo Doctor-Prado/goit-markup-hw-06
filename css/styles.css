@@ -929,6 +929,9 @@ textarea {
     letter-spacing: 0.04em;
     color: var(--slate);
   }
+  .address-link:hover {
+    color: var(--ocean);
+  }
 
   .mobile-menu-open-btn {
     display: none;
