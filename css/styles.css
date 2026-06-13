@@ -73,7 +73,6 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
 }
 
 .header-logo {
@@ -180,18 +179,6 @@ textarea {
   color: var(--iris);
 }
 
-.mobile-menu-nav-link.current::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -20px;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--ocean);
-}
-
 .mobile-menu-bottom {
   margin-left: 16px;
   margin-bottom: 40px;
@@ -209,7 +196,7 @@ textarea {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--slate);
+  color: var(--iris);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -245,9 +232,9 @@ textarea {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 320px;
+  padding: 0 16px;
+  margin: 0 auto;
 }
 
 .section-hero {
@@ -264,6 +251,9 @@ textarea {
 }
 
 .hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 72px;
 }
 
@@ -301,7 +291,7 @@ textarea {
 }
 
 .section-advantages {
-  padding: 96px 16px;
+  padding: 96px 0px;
 }
 
 .visually-hidden {
@@ -335,6 +325,11 @@ textarea {
   display: none;
 }
 
+.section-team {
+  background: var(--cloud);
+  padding: 96px 0;
+}
+
 .item-title {
   font-weight: 700;
   font-size: 36px;
@@ -353,9 +348,10 @@ textarea {
 }
 
 .team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   row-gap: 72px;
-  background: var(--cloud);
-  padding: 96px 28px;
 }
 
 .team-title,
@@ -439,12 +435,15 @@ textarea {
   fill: var(--green);
 }
 
+.section-portfolio {
+  padding: 96px 0px;
+}
+
 .portfolio-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 72px;
-  padding: 96px 16px;
 }
 
 .portfolio-list {
@@ -516,11 +515,14 @@ textarea {
 
 .page-footer {
   background: var(--navy-blue);
+  padding: 96px 0px;
 }
 
 .footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   row-gap: 72px;
-  padding: 96px 16px;
 }
 
 .footer-logo {
@@ -861,14 +863,6 @@ textarea {
 }
 
 @media (min-width: 768px) {
-  .page-header {
-    height: 72px;
-  }
-
-  .header-wrapper {
-    height: 100%;
-  }
-
   .header-nav {
     display: flex;
     align-items: center;
@@ -937,6 +931,10 @@ textarea {
     display: none;
   }
 
+  .container {
+    max-width: 768px;
+  }
+
   .section-hero {
     min-height: 436px;
     background-image:
@@ -971,18 +969,26 @@ textarea {
   }
 
   .portfolio-list {
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 72px;
     column-gap: 24px;
   }
 
+  .portfolio-item {
+    width: calc((100% - 24px) / 2);
+  }
+
   .footer-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: baseline;
     column-gap: 24px;
     row-gap: 72px;
+    max-width: 584px;
   }
 
   .footer-logo-wrapper {
@@ -996,7 +1002,7 @@ textarea {
 
   .footer-subscribe-wrapper {
     width: 453px;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .footer-subscribe-text {
@@ -1037,10 +1043,6 @@ textarea {
 }
 
 @media (min-width: 1158px) {
-  .header-wrapper {
-    padding: 24px 156px;
-  }
-
   .header-nav {
     column-gap: 76px;
   }
@@ -1084,6 +1086,11 @@ textarea {
     display: block;
   }
 
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+
   .item-title {
     font-weight: 500;
     font-size: 20px;
@@ -1104,7 +1111,18 @@ textarea {
   }
 
   .footer-container {
-    justify-content: space-evenly;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    max-width: 1158px;
+    padding: 0;
+    column-gap: 0;
+  }
+  .footer-logo-wrapper {
+    margin-right: 120px;
+  }
+
+  .footer-social-wrapper {
+    margin-right: 80px;
   }
 }
 
