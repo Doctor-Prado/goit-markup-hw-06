@@ -83,6 +83,8 @@ textarea {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--iris);
+  padding: 16px 0;
+  display: block;
 }
 
 .logo-accent {
@@ -149,7 +151,6 @@ textarea {
 
 .mobile-menu-nav {
   margin-top: 72px;
-  margin-left: 16px;
   align-self: flex-start;
 }
 
@@ -180,7 +181,6 @@ textarea {
 }
 
 .mobile-menu-bottom {
-  margin-left: 16px;
   margin-bottom: 40px;
   align-self: start;
 }
